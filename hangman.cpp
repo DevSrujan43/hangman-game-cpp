@@ -1,22 +1,24 @@
 #include<bits/stdc++.h>
 
+using namespace std;
+
 int main()
 {
     
-    std ::string fruits[10] {"mango","papaya","apple","orange","banana","kiwi","watermelon","peach","grapes","strawberry"};
-    std :: string answer = fruits[rand()% 10];
-    std::vector<int> foundchar;
+    string fruits[10] {"mango","papaya","apple","orange","banana","kiwi","watermelon","peach","grapes","strawberry"};
+    string answer = fruits[rand()% 10];
+    vector<int> foundchar;
     int foundCount = 0;
     int lives = 5;
     while (foundCount < (answer.size()-1) && lives > 0)
     {
-        std:: cout << "Guess the fruits name:" << std :: endl;
-        std::cout << " \nYou currently have: " << lives << " lives." << std::endl;
+        cout << "Guess the fruits name:" << std :: endl;
+        cout << " \nYou currently have: " << lives << " lives." << std::endl;
         foundCount = 0;
         for (int i = 0; i < answer.length(); ++i)
         {
            
-            if (std::find (foundchar.begin(), foundchar.end(), i) != foundchar.end())
+            if (find (foundchar.begin(), foundchar.end(), i) != foundchar.end())
             {
                 
                 std::cout << answer[i] << " "; 
@@ -25,14 +27,14 @@ int main()
             else
             {
               
-                std::cout << "_ ";
+                cout << "_ ";
             }
         }
-        std::cout << std::endl;
+        cout << std::endl;
         char userChoice = ' ';
         bool found = false;
-        std::cout << "Choose a character..." << std::endl;
-        std::cin >> userChoice;
+        cout << "Choose a character..." << std::endl;
+        cin >> userChoice;
         for (int i = 0; i < answer.length(); i++)
         {
             if (userChoice == answer[i])
@@ -47,10 +49,10 @@ int main()
     }
     
     if (lives != 0)
-        std::cout << "\nCongrats you found the word!" << std::endl;
+       cout << "\nCongrats you found the word!" << std::endl;
     else
-        std :: cout << "The correct word is " << answer << std::endl;
-        std::cout << "\n You failed !" << std::endl;
+         cout << "The correct word is " << answer << std::endl;
+         cout << "\n You failed !" << std::endl;
 
     return 0;
 }
